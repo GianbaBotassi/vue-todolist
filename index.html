@@ -11,7 +11,33 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-   
+    
+    <div id="app">
+        <div>{{message}}</div>
+        <input type="text" v-model="newTask">
+        <button @click="addObjectToArray">Aggiungi</button>
+
+        <ul>
+            <li v-for="(item, index) in taskList">{{item.task}}
+                <i class="fa-solid fa-x" @click="removeObjectToArray"></i>
+            </li>
+        </ul>
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
     <!-- Vue.js -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="js/main.js"></script>
