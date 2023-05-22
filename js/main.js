@@ -18,6 +18,7 @@ createApp({
     data(){
         return{
             newTask: '',
+            error: false,
             taskList:[
                 {
                     task : "cucinare",
@@ -40,7 +41,12 @@ createApp({
     },
     methods:{
         addObjectToArray(){
-            this.taskList.unshift({task : this.newTask, done : false});
+            if(this.newTask !== '' && this.newTask.length >= 5){
+                this.taskList.unshift({task : this.newTask, done : false});
+                this.error = false
+            }else{
+                this.error = true;
+            }
             this.newTask = '';
     },
     removeObjectToArray(indice){
@@ -52,7 +58,6 @@ createApp({
         }else{
             this.taskList[indice].done = false;
         }
-
     }
     }
 }).mount('#app');
