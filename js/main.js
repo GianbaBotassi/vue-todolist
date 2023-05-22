@@ -25,11 +25,11 @@ createApp({
                 },
                 {
                     task : "mangiare",
-                    done : false
+                    done : true
                 },
                 {
                     task : "ridere",
-                    done : false
+                    done : true
                 },
                 {
                     task : "fare il giardiniere",
@@ -41,9 +41,18 @@ createApp({
     methods:{
         addObjectToArray(){
             this.taskList.unshift({task : this.newTask, done : false});
+            this.newTask = '';
     },
     removeObjectToArray(indice){
         this.taskList.splice(indice,1);
+    },
+    setDoneProperty(indice){
+        if(this.taskList[indice].done === false){
+        this.taskList[indice].done = true;
+        }else{
+            this.taskList[indice].done = false;
+        }
+
     }
     }
 }).mount('#app');

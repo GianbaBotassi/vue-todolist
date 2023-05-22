@@ -18,8 +18,8 @@
         <button @click="addObjectToArray">Aggiungi</button>
 
         <ul>
-            <li v-for="(item, index) in taskList">{{item.task}}
-                <i class="fa-solid fa-x" @click="removeObjectToArray"></i>
+            <li v-for="(item, index) in taskList" @click="setDoneProperty(index)" :class="taskList[index].done ? 'done' : ''">{{item.task}}
+                <i class="fa-solid fa-x" @click="removeObjectToArray(index)"></i>
             </li>
         </ul>
 
