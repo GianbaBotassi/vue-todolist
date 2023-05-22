@@ -12,17 +12,42 @@
 </head>
 <body>
     
+    <!-- Montata App Vue.js -->
     <div id="app">
-        <div>{{message}}</div>
-        <input type="text" v-model="newTask" @keyup.enter="addObjectToArray">
-        <h6 v-if="error">Inserire un task con almeno 5 caratteri</h6>
-        <button @click="addObjectToArray">Aggiungi</button>
 
-        <ul>
-            <li v-for="(item, index) in taskList" @click="setDoneProperty(index)" :class="taskList[index].done ? 'done' : ''">{{item.task}}
+<div class="container">
+    <h1 id="title" class="text-center py-2">
+        TOBOOLIST
+    </h1>
+
+    <!-- Main container list -->
+    <div id="task_list">
+        <div id="task_head">
+
+            <!-- Input and button to add tasks -->
+            <div class="row justify-content-around">
+                <input class="col-7 rounded" type="text" v-model="newTask" @keyup.enter="addObjectToArray" placeholder="Inserisci task...">
+                <button class=" col-3 btn btn-secondary" @click="addObjectToArray">Aggiungi</button>
+            </div>
+
+            <!-- If condition are false print this element -->
+            <h6 v-if="error" class="text-center mt-2 text-danger">Inserire un task con almeno 5 caratteri</h6>
+        </div>
+        
+        <!-- Task list li -->
+        <ul class="pt-4">
+            <li class="d-flex justify-content-between align-items-center px-2 rounded" v-for="(item, index) in taskList" >
+                <div @click="setDoneProperty(item)" :class="item.done ? 'line_through' : ''">{{item.task}}</div>
                 <i class="fa-solid fa-x" @click="removeObjectToArray(index)"></i>
             </li>
         </ul>
+        <h5 class="text-center" v-if="taskList.length === 0">Non sono presenti task in lista</h5>
+
+    </div>
+
+</div>
+
+        
 
 
 

@@ -21,19 +21,19 @@ createApp({
             error: false,
             taskList:[
                 {
-                    task : "cucinare",
+                    task : "Cucinare per festa di compleanno",
                     done : false
                 },
                 {
-                    task : "mangiare",
+                    task : "Mangiare tanta verdura",
                     done : true
                 },
                 {
-                    task : "ridere",
+                    task : "Bahala na",
                     done : true
                 },
                 {
-                    task : "fare il giardiniere",
+                    task : "Fare il giardiniere",
                     done : false
                 },
             ]
@@ -48,16 +48,14 @@ createApp({
                 this.error = true;
             }
             this.newTask = '';
+            console.log(this.taskList)
     },
     removeObjectToArray(indice){
-        this.taskList.splice(indice,1);
+        this.taskList.splice(indice, 1);
+
     },
-    setDoneProperty(indice){
-        if(this.taskList[indice].done === false){
-        this.taskList[indice].done = true;
-        }else{
-            this.taskList[indice].done = false;
-        }
+    setDoneProperty(item){
+        item.done = !item.done
     }
     }
 }).mount('#app');

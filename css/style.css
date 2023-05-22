@@ -1,3 +1,36 @@
-.done{
+#app{
+    background-image: linear-gradient( 135deg, #ABDCFF 10%, #0396FF 100%);
+}
+.line_through{
     text-decoration: line-through;
+}
+ul{
+    padding: 0;
+}
+.container{
+    height: 100vh;
+    width: 100%;
+}
+#task_list{
+    margin: 0 auto;
+    width: 50%;
+    padding: 2rem 1rem;
+}
+#task_head{
+    padding-bottom: 2rem;
+    height: 60px;
+}
+
+ul li{
+    background-color: aliceblue;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    width: 100%;
+}
+ul li i{
+    text-decoration: none;
+}
+ul li, input{
+    background-image: linear-gradient( 135deg, #e7e9ea 10%, #5290bc 100%);
+
 }
