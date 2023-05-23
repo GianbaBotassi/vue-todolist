@@ -17,8 +17,8 @@ const {createApp} = Vue;
 createApp({
     data(){
         return{
-            newTask: '',
-            error: false,
+            newTask: '',  // variabile per input task
+            error: false,  // variabile di stato per errore v-if
             taskList:[
                 {
                     task : "Cucinare per festa di compleanno",
@@ -40,22 +40,22 @@ createApp({
         }
     },
     methods:{
-        addObjectToArray(){
+        addObjectToArray(){   //verifico se newTask non è vuota e che abbia + di 5 caratteri
             if(this.newTask !== '' && this.newTask.length >= 5){
                 this.taskList.unshift({task : this.newTask, done : false});
-                this.error = false
+                this.error = false     //se vero error rimane su false
             }else{
-                this.error = true;
+                this.error = true;    //se falso error diventa true ed appare messaggio con v-if
             }
-            this.newTask = '';
+            this.newTask = '';    //ogni volta azzero variabile input
             console.log(this.taskList)
     },
     removeObjectToArray(indice){
-        this.taskList.splice(indice, 1);
+        this.taskList.splice(indice, 1);    //associo ad indice elemento cliccato per eliminarlo dall'array
 
     },
     setDoneProperty(item){
-        item.done = !item.done
+        item.done = !item.done      //proprietà done viene cambiata se viene cliccata
     }
     }
 }).mount('#app');

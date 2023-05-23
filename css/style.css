@@ -1,8 +1,6 @@
-#app{
+/* General styles */
+body{
     background-image: linear-gradient( 135deg, #ABDCFF 10%, #0396FF 100%);
-}
-.line_through{
-    text-decoration: line-through;
 }
 ul{
     padding: 0;
@@ -10,6 +8,8 @@ ul{
 h1{
     font-size: 3rem;
 }
+
+/* Main styles */
 .container{
     height: 100vh;
     width: 100%;
@@ -23,13 +23,14 @@ h1{
     padding-bottom: 2rem;
     height: 60px;
 }
-
 ul li{
-    background-color: aliceblue;
     margin-bottom: 1rem;
     cursor: pointer;
 }
-
 ul li, input{
     background-image: linear-gradient( 135deg, #e7e9ea 10%, #5290bc 100%);
+}
+/* Classe con linea barrata se done è vero */
+.line_through{
+    text-decoration: line-through;
 }
